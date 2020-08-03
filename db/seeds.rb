@@ -17,3 +17,9 @@ Item.create(description: Faker::Commerce.product_name, quantity: Faker::Number.n
 Item.create(description: Faker::Commerce.product_name, quantity: Faker::Number.non_zero_digit, user_id: user_3.id)
 Item.create(description: Faker::Commerce.product_name, quantity: Faker::Number.non_zero_digit, user_id: user_4.id)
 Item.create(description: Faker::Commerce.product_name, quantity: Faker::Number.non_zero_digit, user_id: user_5.id)
+
+Day.create(day_of_week: Faker::String.random(length: 4), start_time: Faker::Number.number(digits: 4), end_time: Faker::Number.number(digits: 4), user_id: user_1.id)
+Day.create(day_of_week: Faker::String.random(length: 4), start_time: Faker::Number.number(digits: 4), end_time: Faker::Number.number(digits: 4), user_id: user_2.id)
+Day.create(day_of_week: Faker::String.random(length: 4), start_time: Faker::Number.number(digits: 4), end_time: Faker::Number.number(digits: 4), user_id: user_3.id)
+Day.create(day_of_week: Faker::String.random(length: 4), start_time: Faker::Number.number(digits: 4), end_time: Faker::Number.number(digits: 4), user_id: user_4.id)
+Day.create(day_of_week: Faker::String.random(length: 4), start_time: Faker::Number.number(digits: 4), end_time: Faker::Number.number(digits: 4), user_id: user_5.id)
