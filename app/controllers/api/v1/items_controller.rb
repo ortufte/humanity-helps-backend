@@ -2,12 +2,16 @@ class Api::V1::ItemsController < ApplicationController
 
     def index
         items = Item.all 
-        render json: items 
+        render json: ItemSerializer.new(items) 
     end
 
     def create
         item = Item.new(item_params)
-        render json: item
+        if item.save
+            render json: ItemsSerializer.new(item), status: :accepted
+        else 
+            render json: { errors: item.errors.full_messages }, status: :unprocessible_entity
+        end
     end
 
     private
