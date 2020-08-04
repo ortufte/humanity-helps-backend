@@ -2,12 +2,16 @@ class Api::V1::DaysController < ApplicationController
 
     def index
         days = Day.all 
-        render json: days
+        render json: DaySerializer.new(days)
     end
 
     def create
         day = Day.new(day_params)
-        render json: day
+        if day.save
+            render json: DaySerializer.new(day), status: :accepted
+        else
+            render json: { errors: day.errors.full_messages }, status: :unprocessible_entity
+        end
     end
 
     private
