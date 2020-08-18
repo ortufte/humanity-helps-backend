@@ -17,7 +17,7 @@ class Api::V1::DaysController < ApplicationController
     private
     
     def day_params
-        params.require(:day).permit(:day_of_week, :start_time, :end_time, :user_id)
+        params.require(:day).permit(:day_of_week, :start_time, :end_time, :site_id)
     end
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_04_181922) do
+ActiveRecord::Schema.define(version: 2020_08_18_164704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 2020_08_04_181922) do
     t.string "end_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_days_on_user_id"
+    t.bigint "site_id"
+    t.index ["site_id"], name: "index_days_on_site_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -30,11 +30,11 @@ ActiveRecord::Schema.define(version: 2020_08_04_181922) do
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_items_on_user_id"
+    t.bigint "site_id"
+    t.index ["site_id"], name: "index_items_on_site_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "sites", force: :cascade do |t|
     t.string "name"
     t.string "street_address"
     t.string "city"
@@ -44,6 +44,6 @@ ActiveRecord::Schema.define(version: 2020_08_04_181922) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "days", "users"
-  add_foreign_key "items", "users"
+  add_foreign_key "days", "sites"
+  add_foreign_key "items", "sites"
 end
