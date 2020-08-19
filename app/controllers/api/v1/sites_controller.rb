@@ -13,6 +13,18 @@ class Api::V1::SitesController < ApplicationController
           render json: { errors: site.errors.full_messages }
         end
     end
+
+    def show
+      site = Site.find_by(:id => params[:id])
+      render json: SiteSerializer.new(site)
+    end
+
+    def update
+      site = Site.find_by(:id => params[:id])
+      site.update(params)
+      render json: SiteSerializer.new(site)
+    end
+  
     
     private
     
