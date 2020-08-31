@@ -1,24 +1,39 @@
-# README
+README.md
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# **Humanity Helps (Back end API)**
+Find or create donation sites in emergencies.
 
-Things you may want to cover:
+## Built With
+---
+* ruby 2.6.1p33
+* Rails 6.0.3.2
 
-* Ruby version
+## Usage 
+---
+Clone this repository.
+Run 'cd humanity-helps-backend'
+Run 'bundle install' to install all necessary Ruby gems. 
+Run 'rake db:migrate' to migrate the database. 
+Run 'rake db:seed' to populate the database. 
+Run 'rails s' to start the local server. 
+Open your browser to 'http://localhost:3000/api/v1/sites' to view the API.
 
-* System dependencies
+## Front End Repository
+---
+https://github.com/ortufte/humanity-helps-frontend
 
-* Configuration
+## Blog post
+---
+https://ortufte.github.io/humanity_helps
 
-* Database creation
+## Video walkthrough
+---
+https://www.youtube.com/watch?v=hoG99Exr1-A
 
-* Database initialization
+## Contributing 
+---
+Bug reports and pull requests are welcome on GitHub at https://github.com/ortufte/humanity-helps-backend. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## License 
+--- 
+The gem is available as open source under the terms of the MIT License.
