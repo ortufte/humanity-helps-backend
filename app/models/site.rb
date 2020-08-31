@@ -7,6 +7,6 @@ class Site < ApplicationRecord
     validates :street_address, presence: true
     validates :city, presence: true
     validates :state, presence: true
-    validates :zipcode, presence: true, length: { maximum: 5 }
+    validates :zipcode, presence: true
 
 end
