@@ -10,7 +10,7 @@ class Api::V1::DaysController < ApplicationController
         if day.save
             render json: DaySerializer.new(day), status: :accepted
         else
-            render json: { errors: day.errors.full_messages }, status: :unprocessible_entity
+            render json: { errors: day.errors.full_messages }
         end
     end
 
