@@ -18,7 +18,6 @@ class Api::V1::SitesController < ApplicationController
       site = Site.find_by(:id => params[:id])
       render json: SiteSerializer.new(site)
     end
-
     
     private
     

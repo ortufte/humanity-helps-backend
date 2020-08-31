@@ -6,24 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
+Site.destroy_all
 Item.destroy_all
 Day.destroy_all
 
-user_1 = User.create(name: Faker::Name.name, street_address: Faker::Address.street_address, city: Faker::Address.city, state: Faker::Address.state, zipcode: Faker::Address.zip_code)
-user_2 = User.create(name: Faker::Name.name, street_address: Faker::Address.street_address, city: Faker::Address.city, state: Faker::Address.state, zipcode: Faker::Address.zip_code)
-user_3 = User.create(name: Faker::Name.name, street_address: Faker::Address.street_address, city: Faker::Address.city, state: Faker::Address.state, zipcode: Faker::Address.zip_code)
-user_4 = User.create(name: Faker::Name.name, street_address: Faker::Address.street_address, city: Faker::Address.city, state: Faker::Address.state, zipcode: Faker::Address.zip_code)
-user_5 = User.create(name: Faker::Name.name, street_address: Faker::Address.street_address, city: Faker::Address.city, state: Faker::Address.state, zipcode: Faker::Address.zip_code)
+site_1 = Site.create(name: Faker::Name.name, street_address: Faker::Address.street_address, city: Faker::Address.city, state: Faker::Address.state, zipcode: 55912)
+site_2 = Site.create(name: Faker::Name.name, street_address: Faker::Address.street_address, city: Faker::Address.city, state: Faker::Address.state, zipcode: 55912)
+site_3 = Site.create(name: Faker::Name.name, street_address: Faker::Address.street_address, city: Faker::Address.city, state: Faker::Address.state, zipcode: 55912)
+site_4 = Site.create(name: Faker::Name.name, street_address: Faker::Address.street_address, city: Faker::Address.city, state: Faker::Address.state, zipcode: 55912)
+site_5 = Site.create(name: Faker::Name.name, street_address: Faker::Address.street_address, city: Faker::Address.city, state: Faker::Address.state, zipcode: 55912)
 
-Item.create(description: Faker::Commerce.product_name, quantity: Faker::Number.non_zero_digit, user_id: user_1.id)
-Item.create(description: Faker::Commerce.product_name, quantity: Faker::Number.non_zero_digit, user_id: user_2.id)
-Item.create(description: Faker::Commerce.product_name, quantity: Faker::Number.non_zero_digit, user_id: user_3.id)
-Item.create(description: Faker::Commerce.product_name, quantity: Faker::Number.non_zero_digit, user_id: user_4.id)
-Item.create(description: Faker::Commerce.product_name, quantity: Faker::Number.non_zero_digit, user_id: user_5.id)
+Item.create(description: Faker::Commerce.product_name, quantity: Faker::Number.non_zero_digit, site_id: site_1.id)
+Item.create(description: Faker::Commerce.product_name, quantity: Faker::Number.non_zero_digit, site_id: site_2.id)
+Item.create(description: Faker::Commerce.product_name, quantity: Faker::Number.non_zero_digit, site_id: site_3.id)
+Item.create(description: Faker::Commerce.product_name, quantity: Faker::Number.non_zero_digit, site_id: site_4.id)
+Item.create(description: Faker::Commerce.product_name, quantity: Faker::Number.non_zero_digit, site_id: site_5.id)
 
-Day.create(day_of_week: Faker::String.random(length: 4), start_time: Faker::Number.number(digits: 4), end_time: Faker::Number.number(digits: 4), user_id: user_1.id)
-Day.create(day_of_week: Faker::String.random(length: 4), start_time: Faker::Number.number(digits: 4), end_time: Faker::Number.number(digits: 4), user_id: user_2.id)
-Day.create(day_of_week: Faker::String.random(length: 4), start_time: Faker::Number.number(digits: 4), end_time: Faker::Number.number(digits: 4), user_id: user_3.id)
-Day.create(day_of_week: Faker::String.random(length: 4), start_time: Faker::Number.number(digits: 4), end_time: Faker::Number.number(digits: 4), user_id: user_4.id)
-Day.create(day_of_week: Faker::String.random(length: 4), start_time: Faker::Number.number(digits: 4), end_time: Faker::Number.number(digits: 4), user_id: user_5.id)
+Day.create(day_of_week: Faker::Date.forward, start_time: "06:00", end_time: "07:00", site_id: site_1.id)
+Day.create(day_of_week: Faker::Date.forward, start_time: "12:00", end_time: "04:00", site_id: site_2.id)
+Day.create(day_of_week: Faker::Date.forward, start_time: "11:00", end_time: "01:00", site_id: site_3.id)
+Day.create(day_of_week: Faker::Date.forward, start_time: "05:00", end_time: "07:00", site_id: site_4.id)
+Day.create(day_of_week: Faker::Date.forward, start_time: "05:00", end_time: "07:00", site_id: site_5.id)
